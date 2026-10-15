@@ -57,7 +57,6 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           terminationGracePeriodSeconds: 30
-          automountServiceAccountToken: false
           {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}
