@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: image-registry.openshift-image-registry.svc:5000
+  repository: image-registry.openshift-image-registry.svc:5000/camel-quarkus-sample-dev
   pullPolicy: IfNotPresent
   tag: ""
 
