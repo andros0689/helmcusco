@@ -34,20 +34,15 @@ Create chart name and version as used by the chart label.
 Common labels
 */}}
 {{- define "proyectoprueba.labels" -}}
-helm.sh/chart: {{ include "proyectoprueba.chart" . }}
-{{ include "proyectoprueba.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-{{- end }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
+app: {{ include "proyectoprueba.name" . }}
+app.openshift.io/runtime: quarkus
 {{- end }}
 
 {{/*
 Selector labels
 */}}
 {{- define "proyectoprueba.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "proyectoprueba.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
+app: {{ include "proyectoprueba.name" . }}
 {{- end }}
 
 {{/*

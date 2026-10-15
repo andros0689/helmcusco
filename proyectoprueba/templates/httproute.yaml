@@ -1,0 +1,20 @@
+{{- if .Values.httpRoute.enabled -}}
+{{- $fullName := include "proyectoprueba.fullname" . -}}
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+  labels:
+    {{- include "proyectoprueba.labels" . | nindent 4 }}
+  name: {{ $fullName }}
+spec:
+  port:
+    targetPort: http
+  tls:
+    termination: {{ .Values.httpRoute.termination }}
+  to:
+    kind: Service
+    name: {{ $fullName }}
+    weight: 100
+  wildcardPolicy: None
+{{- end }}
