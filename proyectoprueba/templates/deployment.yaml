@@ -56,7 +56,6 @@ spec:
           resources:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          terminationGracePeriodSeconds: 30
           {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}
