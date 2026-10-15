@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: image-registry.openshift-image-registry.svc:5000/camel-quarkus-sample-dev
   pullPolicy: IfNotPresent
-  tag: ""
+  tag: "86faaa122a32c431bcfe3344d7e0e0b9af611405"
 
 imagePullSecrets: []
 nameOverride: "proyectoprueba"
