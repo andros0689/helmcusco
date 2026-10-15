@@ -16,7 +16,7 @@ spec:
       annotations:
         release-id: 1-1
       labels:
-        {{- include "proyectoprueba.selectorLabels" . | nindent 6 }}
+        {{- include "proyectoprueba.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
