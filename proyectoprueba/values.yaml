@@ -5,7 +5,7 @@ image:
   pullPolicy: IfNotPresent
   tag: ""
 
-imagePullSecrets: pipeline-dockercfg-x9tl8
+imagePullSecrets: [pipeline-dockercfg-x9tl8]
 nameOverride: "proyectoprueba"
 fullnameOverride: ""
 
@@ -20,9 +20,10 @@ podLabels: {}
 
 podSecurityContext: {}
 
-securityContext:
-  allowPrivilegeEscalation: false
-  runAsNonRoot: true
+securityContext: {
+  allowPrivilegeEscalation:false,
+  runAsNonRoot:true
+}
 
 service:
   type: ClusterIP

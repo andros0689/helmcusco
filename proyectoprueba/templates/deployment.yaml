@@ -18,13 +18,11 @@ spec:
       labels:
         {{- include "proyectoprueba.selectorLabels" . | nindent 6 }}
     spec:
+      {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
-        - pipeline-dockercfg-x9tl8
-      serviceAccountName: proyectopruebaserviceaccount
-      {{- with .Values.podSecurityContext }}
-      securityContext:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      serviceAccountName: {{ include "proyectoprueba.serviceAccountName" . }}
       containers:
         - name: quarkus
           {{- with .Values.securityContext }}
