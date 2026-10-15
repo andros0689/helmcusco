@@ -20,10 +20,9 @@ podLabels: {}
 
 podSecurityContext: {}
 
-securityContext: {
-  allowPrivilegeEscalation:false,
-  runAsNonRoot:true
-}
+securityContext:
+  allowPrivilegeEscalation: false
+  runAsNonRoot: true
 
 service:
   type: ClusterIP
