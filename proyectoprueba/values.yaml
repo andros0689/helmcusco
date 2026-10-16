@@ -4,7 +4,7 @@ image:
   repository: image-registry.openshift-image-registry.svc:5000
   pullPolicy: IfNotPresent
   namespace: camel-quarkus-sample-dev
-  tag: "2ed751e6f8e3e4804271dcef5b869a89ac105734"
+  tag: "c725e95884416c19f39da62d9cc4a19330bd1641"
 
 imagePullSecrets: []
 nameOverride: "proyectoprueba"
