@@ -1,77 +1,78 @@
-replicaCount: 1
+proyectoprueba:
+  replicaCount: 1
 
-image:
-  repository: image-registry.openshift-image-registry.svc:5000
-  pullPolicy: IfNotPresent
-  namespace: camel-quarkus-sample-dev
-  tag: "c725e95884416c19f39da62d9cc4a19330bd1641"
+  image:
+    repository: image-registry.openshift-image-registry.svc:5000
+    pullPolicy: IfNotPresent
+    namespace: camel-quarkus-sample-dev
+    tag: "c725e95884416c19f39da62d9cc4a19330bd1641"
 
-imagePullSecrets: []
-nameOverride: "proyectoprueba"
-fullnameOverride: ""
+  imagePullSecrets: []
+  nameOverride: "proyectoprueba"
+  fullnameOverride: ""
 
-serviceAccount:
-  create: true
-  automount: true
-  annotations: {}
-  name: "proyectopruebaserviceaccount"
+  serviceAccount:
+    create: true
+    automount: true
+    annotations: {}
+    name: "proyectopruebaserviceaccount"
 
-podAnnotations: {}
-podLabels: {}
+  podAnnotations: {}
+  podLabels: {}
 
-podSecurityContext: {}
+  podSecurityContext: {}
 
-securityContext:
-  allowPrivilegeEscalation: false
-  runAsNonRoot: true
+  securityContext:
+    allowPrivilegeEscalation: false
+    runAsNonRoot: true
 
-env:
-  - name: REST_CONSUMER_APIBASEPATH
-    value: "restConsumer"
-  - name: REST_CONSUMER_APIPATH
-    value: "/api-doc"
-  - name: REST_CONSUMER_SERVICEID
-    value: "restConsumer"
-  - name: REST_CONSUMER_SERVICENAME
-    value: "/restConsumer"
+  env:
+    - name: REST_CONSUMER_APIBASEPATH
+      value: "restConsumer"
+    - name: REST_CONSUMER_APIPATH
+      value: "/api-doc"
+    - name: REST_CONSUMER_SERVICEID
+      value: "restConsumer"
+    - name: REST_CONSUMER_SERVICENAME
+      value: "/restConsumer"
 
-service:
-  type: ClusterIP
-  port: 80
+  service:
+    type: ClusterIP
+    port: 80
 
-httpRoute:
-  enabled: true
-  termination: edge
+  httpRoute:
+    enabled: true
+    termination: edge
 
-resources:
-  limits:
-    cpu: 200m
-    memory: 256Mi
-  requests:
-    cpu: 30m
-    memory: 128Mi
+  resources:
+    limits:
+      cpu: 200m
+      memory: 256Mi
+    requests:
+      cpu: 30m
+      memory: 128Mi
 
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
+  livenessProbe:
+    httpGet:
+      path: /
+      port: http
+  readinessProbe:
+    httpGet:
+      path: /
+      port: http
 
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 100
+    targetCPUUtilizationPercentage: 80
 
-volumes: []
+  volumes: []
 
-volumeMounts: []
+  volumeMounts: []
 
-nodeSelector: {}
+  nodeSelector: {}
 
-tolerations: []
+  tolerations: []
 
-affinity: {}
+  affinity: {}
