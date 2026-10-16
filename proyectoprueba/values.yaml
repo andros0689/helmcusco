@@ -25,6 +25,16 @@ securityContext:
   allowPrivilegeEscalation: false
   runAsNonRoot: true
 
+env:
+  - name: REST_CONSUMER_APIBASEPATH
+    value: "restConsumer"
+  - name: REST_CONSUMER_APIPATH
+    value: "/api-doc"
+  - name: REST_CONSUMER_SERVICEID
+    value: "restConsumer"
+  - name: REST_CONSUMER_SERVICENAME
+    value: "/restConsumer"
+
 service:
   type: ClusterIP
   port: 80
